@@ -144,6 +144,8 @@
     <ClCompile Include="..\..\Common\d3dUtil.cpp" />
     <ClCompile Include="..\..\Common\GameTimer.cpp" />
     <ClCompile Include="InitDirect3DApp.cpp" />
+    <ClCompile Include="Shader\wtf_ps.hlsl" />
+    <ClCompile Include="Shader\wtf_vs.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Common\d3dApp.h" />

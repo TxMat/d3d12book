@@ -97,6 +97,33 @@ void InitDirect3DApp::Draw(const GameTimer& gt)
     // Clear the back buffer and depth buffer.
 	mCommandList->ClearRenderTargetView(CurrentBackBufferView(), Colors::LightSteelBlue, 0, nullptr);
 	mCommandList->ClearDepthStencilView(DepthStencilView(), D3D12_CLEAR_FLAG_DEPTH | D3D12_CLEAR_FLAG_STENCIL, 1.0f, 0, 0, nullptr);
+ //
+	// // Create vertex buffer
+ //    Microsoft::WRL::ComPtr<ID3D12Resource> vertexBuffer;
+	// const UINT vertexBufferSize = 3 * sizeof(Vertex);
+	// CD3DX12_HEAP_PROPERTIES heapProperties(D3D12_HEAP_TYPE_UPLOAD);
+	// CD3DX12_RESOURCE_DESC bufferDesc = CD3DX12_RESOURCE_DESC::Buffer(vertexBufferSize);
+	// ThrowIfFailed(md3dDevice->CreateCommittedResource(
+	// 	&heapProperties,
+	// 	D3D12_HEAP_FLAG_NONE,
+	// 	&bufferDesc,
+	// 	D3D12_RESOURCE_STATE_GENERIC_READ,
+	// 	nullptr,
+	// 	IID_PPV_ARGS(&vertexBuffer)));
+ //
+	// // Copy vertex data to the buffer
+	// Vertex triangleVertices[] = {
+	// 	{XMFLOAT3(0.0f, 0.5f, 0.0f), XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f)},   // Top
+	// 	{XMFLOAT3(0.5f, -0.5f, 0.0f), XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f)},  // Bottom-right
+	// 	{XMFLOAT3(-0.5f, -0.5f, 0.0f), XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f)}   // Bottom-left
+	// };
+ //
+	// UINT8* pVertexDataBegin;
+	// CD3DX12_RANGE readRange(0, 0);
+	// ThrowIfFailed(vertexBuffer->Map(0, &readRange, reinterpret_cast<void**>(&pVertexDataBegin)));
+	// memcpy(pVertexDataBegin, triangleVertices, vertexBufferSize);
+	// vertexBuffer->Unmap(0, nullptr);
+
 	
     // Specify the buffers we are going to render to.
 	mCommandList->OMSetRenderTargets(1, &CurrentBackBufferView(), true, &DepthStencilView());
